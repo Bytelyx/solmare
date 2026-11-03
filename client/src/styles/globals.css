@@ -36,6 +36,17 @@
   --color-navy: var(--navy);
   --color-navy-foreground: var(--navy-foreground);
   --color-mauve: var(--mauve);
+
+  /* gradient color */
+  --color-cat-gradient-1: #071E17;
+  --color-cat-gradient-2: #263B2C;
+  --color-cat-gradient-3: #69704E;
+  --color-cat-gradient-4: #D8C69F;
+  --color-cat-gradient-5: #F3EBDD;
+  --color-cat-gradient-6: #F2ECE3;
+
+  /* Accent Gold */
+  --color-gold-metallic: #D4AF37;
 }
 
 /* Solmare palette: deep emerald green, gold #D8B779, cream. "navy" tokens hold the darkest green. */
@@ -130,3 +141,4 @@
 @utility animate-marquee { animation: marquee 40s linear infinite; }
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 @utility animate-rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+
