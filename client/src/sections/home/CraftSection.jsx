@@ -50,7 +50,7 @@ export function CraftSection() {
           {/* CTA Button */}
           <Link
             to="/about"
-            className="mt-10 inline-block border border-brand-charcoal bg-transparent px-8 py-3 text-xs font-medium uppercase tracking-widest text-brand-charcoal transition-colors duration-200 hover:bg-brand-charcoal hover:text-white"
+            className="mt-10 inline-block border border-brand-charcoal bg-transparent px-8 py-3 text-xs font-medium uppercase tracking-widest text-brand-charcoal transition-colors duration-200 hover:bg-gradient-navy hover:text-gold2"
           >
             Our story
           </Link>

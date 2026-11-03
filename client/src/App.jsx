@@ -7,8 +7,6 @@ import { Toaster } from "@/components/common/Toaster";
 
 import { HeroSection } from "@/sections/home/HeroSection";
 import { CategoriesSection } from "@/sections/home/CategoriesSection";
-import { EditorialSplitSection } from "@/sections/home/EditorialSplitSection";
-import { CuratedSection } from "@/sections/home/CuratedSection";
 import { CraftSection } from "@/sections/home/CraftSection";
 import { TestimonialsSection } from "@/sections/home/TestimonialsSection";
 import { PromiseSection } from "@/sections/home/PromiseSection";
@@ -79,8 +77,6 @@ function HomePage() {
     <>
       <HeroSection />
       <CategoriesSection />
-      <EditorialSplitSection />
-      <CuratedSection />
       <CraftSection />
       <TestimonialsSection />
       <PromiseSection />
@@ -101,6 +97,10 @@ export default function App() {
         <Suspense fallback={<RouteLoading />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            {/* Added /categories route pointing to your 3-in-1 CategoriesSection */}
+            <Route path="/categories" element={<CategoriesSection />} />
+            <Route path="/category" element={<CategoriesSection />} />
+
             <Route path="/jewellery" element={<JewellerySection />} />
             <Route path="/collections" element={<CollectionsSection />} />
             <Route path="/product/:slug" element={<ProductDetailSection />} />

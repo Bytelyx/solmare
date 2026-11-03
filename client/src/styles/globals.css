@@ -44,6 +44,8 @@
   --color-cat-gradient-4: #D8C69F;
   --color-cat-gradient-5: #F3EBDD;
   --color-cat-gradient-6: #F2ECE3;
+  --color-cat-gradient-7: #F7F2EB;
+  --color-cat-gradient-8: #FAF9F6;
 
   /* Accent Gold */
   --color-gold-metallic: #D4AF37;
@@ -115,6 +117,15 @@
   background-clip: text;
   color: transparent;
 }
+
+@utility text-gradient-navy {
+  background-image: var(--gradient-navy);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
 @utility bg-gradient-gold { background: var(--gradient-gold); }
 @utility bg-gradient-navy { background: var(--gradient-navy); }
 @utility shadow-soft { box-shadow: var(--shadow-soft); }
