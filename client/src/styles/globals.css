@@ -93,6 +93,7 @@
   --navy-foreground: oklch(0.95 0.025 85);
   --mauve: oklch(0.72 0.1 20);
   --gradient-gold: linear-gradient(120deg, var(--gold), var(--gold-soft), var(--gold));
+  /* Navbar green */
   --gradient-navy: linear-gradient(160deg, #071E17, #0F3328);
   --shadow-soft: 0 20px 50px -25px color-mix(in oklab, black 60%, transparent);
 }
