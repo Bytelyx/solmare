@@ -5,7 +5,7 @@ import everyday from "@/assets/everyday.jpg";
 
 export function EditorialSplitSection() {
   return (
-    <section className="mx-auto grid max-w-7xl gap-4 px-4 md:grid-cols-5 md:px-8">
+    <section className="mx-auto grid max-w-7xl gap-4 px-4 md:grid-cols-5 md:px-8 ">
       <Link to="/collections" className="group relative overflow-hidden md:col-span-3">
         <img
           src={bridal}

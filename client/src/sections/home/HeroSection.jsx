@@ -77,7 +77,7 @@ function BannerSlider() {
   };
 
   return (
-    <div className="overflow-hidden [--peak:6vw] [--sw:88vw] md:[--peak:11vw] md:[--sw:78vw]">
+    <div className="overflow-hidden [--peak:6vw] [--sw:88vw] md:[--peak:11vw] md:[--sw:78vw] ">
       <div
         className="flex w-max"
         style={{

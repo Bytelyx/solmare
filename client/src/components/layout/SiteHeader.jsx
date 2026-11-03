@@ -99,8 +99,8 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-all ${
-        scrolled ? "bg-navy/95 backdrop-blur shadow-soft" : "bg-navy"
+      className={`sticky top-0 z-50 border-b transition-all bg-[image:var(--gradient-navy)] ${
+        scrolled ? "backdrop-blur shadow-soft" : ""
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 md:h-20 md:gap-8 md:px-8">

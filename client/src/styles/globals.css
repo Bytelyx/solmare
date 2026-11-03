@@ -47,6 +47,22 @@
 
   /* Accent Gold */
   --color-gold-metallic: #D4AF37;
+  --color-gold2: #C29C2F;
+
+  /* Testimonials & Craft section colors */
+  --color-warm-cream: #F2ECE6;
+  --color-warm-border: #D6CEC4;
+  --color-ring-tan: #EBDCCF;
+  --color-brand-brown: #2B1B17;
+  --color-brand-caramel: #8C6226;
+  --color-brand-bronze: #A27B5C;
+  --color-brand-terracotta: #966743;
+  --color-brand-gold-icon: #C49A45;
+  --color-brand-charcoal: #1A1A1A;
+  --color-body-dark: #4A4A4A;
+  --color-body-muted: #5A4A42;
+  --color-body-subtle: #8C7A70;
+  --color-body-gray: #555555;
 }
 
 /* Solmare palette: deep emerald green, gold #D8B779, cream. "navy" tokens hold the darkest green. */
@@ -77,7 +93,7 @@
   --navy-foreground: oklch(0.95 0.025 85);
   --mauve: oklch(0.72 0.1 20);
   --gradient-gold: linear-gradient(120deg, var(--gold), var(--gold-soft), var(--gold));
-  --gradient-navy: linear-gradient(160deg, oklch(0.16 0.025 165), oklch(0.25 0.04 165));
+  --gradient-navy: linear-gradient(160deg, #071E17, #0F3328);
   --shadow-soft: 0 20px 50px -25px color-mix(in oklab, black 60%, transparent);
 }
 
