@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { categories, products } from "@/constants/products";
-import { ProductCard } from "@/components/common/ProductCard";
+import LuxuryProductCard from "@/components/common/ProductCard";
 import bridal from "@/assets/bridal.jpg";
 import everyday from "@/assets/everyday.jpg";
 
@@ -12,6 +12,8 @@ export function CategoriesSection() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.get("category") || "all";
   const [tab, setTab] = useState(initialCategory);
+
+
 
   const handleTabChange = (selectedTab) => {
     setTab(selectedTab);
@@ -30,8 +32,7 @@ export function CategoriesSection() {
   return (
     <div className="w-full">
       {/* Category Section + Editorial Highlights */}
-      <div className="w-full bg-[linear-gradient(180deg,var(--color-cat-gradient-1)_0%,var(--color-cat-gradient-2)_30%,var(--color-cat-gradient-3)_50%,var(--color-cat-gradient-4)_65%,var(--color-cat-gradient-8)_85%,#FAF9F6_100%)] px-4 pt-16 pb-8 md:px-8 md:pt-24 md:pb-12">
-        
+      <div className="w-full bg-[linear-gradient(180deg,var(--color-cat-gradient-1)_0%,var(--color-cat-gradient-2)_30%,var(--color-cat-gradient-3)_50%,var(--color-cat-gradient-4)_65%,var(--color-cat-gradient-8)_85%,var(--color-cat-gradient-6)_100%)] px-4 pt-16 pb-8 md:px-8 md:pt-24 md:pb-12">
         {/* 1. Shop by Category */}
         <section className="mx-auto max-w-7xl pb-16">
           <div className="mb-12 text-center">
@@ -116,8 +117,8 @@ export function CategoriesSection() {
         </section>
       </div>
 
-      {/* 3. Curated Fine Jewellery (Full Off-White) */}
-      <section className="w-full bg-[#FAF9F6] px-4 pt-12 pb-16 text-stone-900 md:px-8 md:pt-16 md:pb-24">
+      {/* 3. Curated Fine Jewellery */}
+      <section className="w-full bg-cat-gradient-6 px-4 pt-12 pb-16 text-stone-900 md:px-8 md:pt-16 md:pb-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col items-center gap-6 text-center">
             <div>
@@ -137,11 +138,10 @@ export function CategoriesSection() {
                 <button
                   key={t}
                   onClick={() => handleTabChange(t)}
-                  className={`shrink-0 cursor-pointer rounded-full border px-5 py-2 text-[11px] font-bold uppercase tracking-[0.2em] transition ${
-                    tab === t
+                  className={`shrink-0 cursor-pointer rounded-full border px-5 py-2 text-[11px] font-bold uppercase tracking-[0.2em] transition ${tab === t
                       ? "border-gold bg-gold text-navy"
                       : "border-stone-300 bg-white text-stone-700 hover:border-gold hover:text-navy"
-                  }`}
+                    }`}
                 >
                   {t}
                 </button>
@@ -151,7 +151,7 @@ export function CategoriesSection() {
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
             {curated.map((p) => (
-              <ProductCard key={p.slug} product={p} />
+              <LuxuryProductCard key={p.id || p.slug} product={p} />
             ))}
           </div>
 

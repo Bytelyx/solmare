@@ -38,7 +38,7 @@
   --color-mauve: var(--mauve);
 
   /* gradient color */
-  --color-cat-gradient-1: #071E17;
+--color-cat-gradient-1: #071E17;
   --color-cat-gradient-2: #263B2C;
   --color-cat-gradient-3: #69704E;
   --color-cat-gradient-4: #D8C69F;
@@ -46,6 +46,11 @@
   --color-cat-gradient-6: #F2ECE3;
   --color-cat-gradient-7: #F7F2EB;
   --color-cat-gradient-8: #FAF9F6;
+  --color-cat-gradient-9: #FBF9F6;
+  --color-cat-gradient-10: #FCFAF8;
+  --color-cat-gradient-11: #FDFBFA;
+  --color-cat-gradient-12: #FEFCFB;
+  --color-cat-gradient-13: #FFFEFD;
 
   /* Accent Gold */
   --color-gold-metallic: #D4AF37;
