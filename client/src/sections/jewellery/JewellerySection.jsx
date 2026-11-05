@@ -1,4 +1,3 @@
-
 import { Link, useSearchParams } from "react-router-dom";
 import { useMemo } from "react";
 import { categories, getCategory, products } from "@/constants/products";
@@ -25,7 +24,6 @@ function Filter({ label, value, onChange, options }) {
       <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold">
         {label}
       </span>
-
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -56,7 +54,6 @@ export function JewellerySection() {
 
   const setFilter = (patch) => {
     const next = new URLSearchParams(searchParams);
-
     Object.entries(patch).forEach(([key, val]) => {
       if (!val || val === "all") {
         next.delete(key);
@@ -64,7 +61,6 @@ export function JewellerySection() {
         next.set(key, val);
       }
     });
-
     setSearchParams(next);
   };
 
@@ -73,7 +69,6 @@ export function JewellerySection() {
   const list = useMemo(() => {
     const pr = PRICES.find((x) => x.value === price);
     const term = (q ?? "").toLowerCase();
-
     return products.filter(
       (p) =>
         p.category !== "gift-cards" &&
@@ -81,8 +76,7 @@ export function JewellerySection() {
         (p.name + " " + p.metal).toLowerCase().includes(term) &&
         (shopFor === "all" ||
           audienceOf(p) === shopFor ||
-          (shopFor.startsWith("kid") &&
-            audienceOf(p) === "kids-unisex")) &&
+          (shopFor.startsWith("kid") && audienceOf(p) === "kids-unisex")) &&
         (metal === "all" || materialsOf(p).includes(metal)) &&
         (occasion === "all" || occasionsOf(p).includes(occasion)) &&
         (style === "all" ||
@@ -105,32 +99,24 @@ export function JewellerySection() {
 
   const makeCategoryUrl = (catSlug) => {
     const next = new URLSearchParams(searchParams);
-
     if (catSlug) {
       next.set("category", catSlug);
     } else {
       next.delete("category");
     }
-
     const str = next.toString();
     return str ? `/jewellery?${str}` : "/jewellery";
   };
 
   return (
-    <div className="bg-[linear-gradient(180deg,var(--color-cat-gradient-1)_0%,var(--color-cat-gradient-2)_30%,var(--color-cat-gradient-3)_50%,var(--color-cat-gradient-4)_65%,var(--color-cat-gradient-8)_85%,var(--color-cat-gradient-6)_100%)]">
-
-      {/* Hero Image Section */}
+    <>
       <PageHero
         eyebrow="The Jewellery"
         title={cat?.name ?? "All Jewellery"}
         subtitle="Hallmarked gold. Certified diamonds. Designed to be worn, every day."
         image={everyday}
       />
-
-      {/* Jewellery Content */}
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
-
-        {/* Category Navigation */}
         <div className="-mx-4 mb-8 flex gap-2 overflow-x-auto px-4 pb-2 no-scrollbar">
           <Link
             to={makeCategoryUrl(undefined)}
@@ -142,7 +128,6 @@ export function JewellerySection() {
           >
             All
           </Link>
-
           {categories.map((c) => (
             <Link
               key={c.slug}
@@ -163,28 +148,20 @@ export function JewellerySection() {
           ))}
         </div>
 
-        {/* Filters */}
         <div className="mb-10 border-y py-5">
           <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
-
             <Filter
               label="Shop for"
               value={shopFor}
-              onChange={(v) =>
-                setFilter({ shopFor: v === "all" ? undefined : v })
-              }
+              onChange={(v) => setFilter({ shopFor: v === "all" ? undefined : v })}
               options={SHOP_FOR}
             />
-
             <Filter
               label="Metals"
               value={metal}
-              onChange={(v) =>
-                setFilter({ metal: v === "all" ? undefined : v })
-              }
+              onChange={(v) => setFilter({ metal: v === "all" ? undefined : v })}
               options={METALS}
             />
-
             <Filter
               label="Occasion"
               value={occasion}
@@ -193,43 +170,33 @@ export function JewellerySection() {
               }
               options={OCCASION_OPTS}
             />
-
             <Filter
               label="Price"
               value={price}
-              onChange={(v) =>
-                setFilter({ price: v === "all" ? undefined : v })
-              }
+              onChange={(v) => setFilter({ price: v === "all" ? undefined : v })}
               options={PRICES}
             />
-
             <Filter
               label="Style"
               value={style}
-              onChange={(v) =>
-                setFilter({ style: v === "all" ? undefined : v })
-              }
+              onChange={(v) => setFilter({ style: v === "all" ? undefined : v })}
               options={STYLES}
             />
-
           </div>
-
           <div className="mt-4 flex items-center justify-between text-sm text-muted-foreground">
             <p>
               {list.length} {list.length === 1 ? "design" : "designs"}
               {cat ? ` in ${cat.name}` : ""}
             </p>
-
             <button
               onClick={clear}
-              className="cursor-pointer text-xs font-bold uppercase tracking-[0.15em] text-gold hover:underline"
+              className="text-xs font-bold uppercase tracking-[0.15em] text-gold hover:underline cursor-pointer"
             >
               Clear filters
             </button>
           </div>
         </div>
 
-        {/* Product Listing */}
         {list.length ? (
           <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
             {list.map((p) => (
@@ -238,22 +205,17 @@ export function JewellerySection() {
           </div>
         ) : (
           <div className="py-24 text-center">
-            <h2 className="text-3xl">
-              New designs arriving soon
-            </h2>
-
+            <h2 className="text-3xl">New designs arriving soon</h2>
             <p className="mt-2 text-sm text-muted-foreground">
               Our karigars are crafting this collection. Explore everything else
               meanwhile.
             </p>
-
             <Link to="/jewellery" className="btn-navy mt-6">
               View all jewellery
             </Link>
           </div>
         )}
-
       </div>
-    </div>
+    </>
   );
 }
