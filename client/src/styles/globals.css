@@ -1,3 +1,4 @@
+
 @import "tailwindcss" source(none);
 @source "../../index.html";
 @source "../**/*.{js,jsx}";
@@ -5,40 +6,63 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* =========================================
+   1. THEME CONFIGURATION
+========================================= */
+
 @theme inline {
+  /* Typography */
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Mulish", system-ui, sans-serif;
+
+  /* Border Radius */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Base Theme Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+
   --color-navy: var(--navy);
   --color-navy-foreground: var(--navy-foreground);
+
   --color-mauve: var(--mauve);
 
-  /* gradient color */
---color-cat-gradient-1: #071E17;
+  /* =========================================
+     2. CATEGORY GRADIENT COLORS
+  ========================================= */
+
+  --color-cat-gradient-1: #071E17;
   --color-cat-gradient-2: #263B2C;
   --color-cat-gradient-3: #69704E;
   --color-cat-gradient-4: #D8C69F;
@@ -52,69 +76,213 @@
   --color-cat-gradient-12: #FEFCFB;
   --color-cat-gradient-13: #FFFEFD;
 
-  /* Accent Gold */
+  /* =========================================
+     3. GOLD ACCENT COLORS
+  ========================================= */
+
   --color-gold-metallic: #D4AF37;
   --color-gold2: #C29C2F;
 
-  /* Testimonials & Craft section colors */
+  /* =========================================
+     4. PRODUCT CARD LUXURY COLORS
+  ========================================= */
+
+  /* Card Background */
+  --color-product-bg-start: #F3EBDD;
+  --color-product-bg-middle: #FAF9F6;
+  --color-product-bg-end: #FFFEFD;
+
+  /* Emerald Green */
+  --color-product-green: #071E17;
+  --color-product-green-light: #195745;
+  --color-product-green-muted: #69704E;
+  --color-product-green-dark: #0E382B;
+
+  /* Gold */
+  --color-product-gold: #C6A15B;
+  --color-product-gold-light: #D8C69F;
+  --color-product-gold-text: #C29C2F;
+
+  /* White */
+  --color-product-white: #FFFEFD;
+
+  /* =========================================
+     5. PRODUCT CARD SHADOWS
+  ========================================= */
+
+  --shadow-product-card:
+    0 10px 24px -6px rgba(7, 30, 23, 0.10),
+    0 4px 10px -4px rgba(7, 30, 23, 0.04);
+
+  --shadow-product-card-hover:
+    0 14px 30px -6px rgba(7, 30, 23, 0.17);
+
+  --shadow-product-image:
+    0 6px 12px rgba(7, 30, 23, 0.10);
+
+  --shadow-product-image-hover:
+    0 6px 12px rgba(7, 30, 23, 0.12);
+
+  /* =========================================
+     6. TESTIMONIALS & CRAFT COLORS
+  ========================================= */
+
   --color-warm-cream: #F2ECE6;
   --color-warm-border: #D6CEC4;
   --color-ring-tan: #EBDCCF;
+
   --color-brand-brown: #2B1B17;
   --color-brand-caramel: #8C6226;
   --color-brand-bronze: #A27B5C;
   --color-brand-terracotta: #966743;
   --color-brand-gold-icon: #C49A45;
+
   --color-brand-charcoal: #1A1A1A;
+
   --color-body-dark: #4A4A4A;
   --color-body-muted: #5A4A42;
   --color-body-subtle: #8C7A70;
   --color-body-gray: #555555;
 }
 
-/* Solmare palette: deep emerald green, gold #D8B779, cream. "navy" tokens hold the darkest green. */
+/* =========================================
+   7. ROOT VARIABLES
+========================================= */
+
 :root {
   --radius: 1rem;
+
+  /* Main Background */
   --background: oklch(0.21 0.03 165);
   --foreground: oklch(0.95 0.025 85);
+
+  /* Cards */
   --card: oklch(0.255 0.035 165);
   --card-foreground: oklch(0.95 0.025 85);
+
+  /* Popover */
   --popover: oklch(0.255 0.035 165);
   --popover-foreground: oklch(0.95 0.025 85);
+
+  /* Primary */
   --primary: oklch(0.8 0.085 82);
   --primary-foreground: oklch(0.17 0.025 165);
+
+  /* Secondary */
   --secondary: oklch(0.27 0.035 165);
   --secondary-foreground: oklch(0.95 0.025 85);
+
+  /* Muted */
   --muted: oklch(0.27 0.035 165);
   --muted-foreground: oklch(0.75 0.03 120);
+
+  /* Accent */
   --accent: oklch(0.8 0.085 82);
   --accent-foreground: oklch(0.17 0.025 165);
+
+  /* Destructive */
   --destructive: oklch(0.6 0.2 27);
   --destructive-foreground: oklch(0.99 0 0);
+
+  /* Borders */
   --border: oklch(0.33 0.035 165);
   --input: oklch(0.33 0.035 165);
   --ring: oklch(0.8 0.085 82);
+
+  /* Gold */
   --gold: oklch(0.8 0.085 82);
   --gold-soft: oklch(0.87 0.08 85);
+
+  /* Deep Emerald */
   --navy: oklch(0.17 0.025 165);
   --navy-foreground: oklch(0.95 0.025 85);
+
+  /* Mauve */
   --mauve: oklch(0.72 0.1 20);
-  --gradient-gold: linear-gradient(120deg, var(--gold), var(--gold-soft), var(--gold));
-  /* Navbar green */
-  --gradient-navy: linear-gradient(160deg, #071E17, #0F3328);
-  --shadow-soft: 0 20px 50px -25px color-mix(in oklab, black 60%, transparent);
+
+  /* =========================================
+     8. GLOBAL GRADIENTS
+  ========================================= */
+
+  /* Luxury Gold Gradient */
+  --gradient-gold: linear-gradient(
+    120deg,
+    var(--gold),
+    var(--gold-soft),
+    var(--gold)
+  );
+
+  /* Deep Emerald Navbar Gradient */
+  --gradient-navy: linear-gradient(
+    160deg,
+    #071E17,
+    #0F3328
+  );
+
+  /* Luxury Green to Gold */
+  --gradient-green-gold: linear-gradient(
+    180deg,
+    #071E17 0%,
+    #263B2C 35%,
+    #69704E 65%,
+    #D8C69F 100%
+  );
+
+  /* Soft Cream Gradient */
+  --gradient-cream: linear-gradient(
+    180deg,
+    #F3EBDD 0%,
+    #FAF9F6 55%,
+    #FFFEFD 100%
+  );
+
+  /* Shadows */
+  --shadow-soft:
+    0 20px 50px -25px color-mix(in oklab, black 60%, transparent);
 }
 
+/* =========================================
+   9. BASE STYLES
+========================================= */
+
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.01em; }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
 }
+
+/* =========================================
+   10. TEXT GRADIENT UTILITIES
+========================================= */
 
 @utility text-gradient-gold {
   background: var(--gradient-gold);
@@ -131,9 +299,38 @@
   -webkit-text-fill-color: transparent;
 }
 
-@utility bg-gradient-gold { background: var(--gradient-gold); }
-@utility bg-gradient-navy { background: var(--gradient-navy); }
-@utility shadow-soft { box-shadow: var(--shadow-soft); }
+/* =========================================
+   11. BACKGROUND GRADIENT UTILITIES
+========================================= */
+
+@utility bg-gradient-gold {
+  background: var(--gradient-gold);
+}
+
+@utility bg-gradient-navy {
+  background: var(--gradient-navy);
+}
+
+@utility bg-gradient-green-gold {
+  background: var(--gradient-green-gold);
+}
+
+@utility bg-gradient-cream {
+  background: var(--gradient-cream);
+}
+
+/* =========================================
+   12. SHADOW UTILITIES
+========================================= */
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+/* =========================================
+   13. EYEBROW TEXT
+========================================= */
+
 @utility eyebrow {
   font-size: 0.7rem;
   letter-spacing: 0.3em;
@@ -141,37 +338,130 @@
   color: var(--gold);
   font-weight: 700;
 }
+
+/* =========================================
+   14. BUTTON UTILITIES
+========================================= */
+
 @utility btn-gold {
-  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-  padding: .85rem 1.75rem; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 700;
-  background: var(--gradient-gold); color: var(--navy); transition: transform .3s, box-shadow .3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.85rem 1.75rem;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  background: var(--gradient-gold);
+  color: var(--navy);
+
+  transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  &:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+  }
 }
+
 @utility btn-navy {
-  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-  padding: .85rem 1.75rem; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 700;
-  background: var(--navy); color: var(--navy-foreground); transition: background .3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.85rem 1.75rem;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  background: var(--navy);
+  color: var(--navy-foreground);
+
+  transition: background 0.3s;
   cursor: pointer;
-  &:hover { background: color-mix(in oklab, var(--navy) 85%, var(--gold)); }
+
+  &:hover {
+    background: color-mix(in oklab, var(--navy) 85%, var(--gold));
+  }
 }
+
 @utility btn-outline {
-  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-  padding: .85rem 1.75rem; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 700;
-  border: 1px solid currentColor; transition: background .3s, color .3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.85rem 1.75rem;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  border: 1px solid currentColor;
+
+  transition: background 0.3s, color 0.3s;
   cursor: pointer;
-  &:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+  &:hover {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+  }
 }
+
+/* =========================================
+   15. SCROLLBAR UTILITIES
+========================================= */
+
 @utility no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
+
   &::-webkit-scrollbar {
     display: none;
   }
 }
 
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@utility animate-marquee { animation: marquee 40s linear infinite; }
-@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
-@utility animate-rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+/* =========================================
+   16. ANIMATIONS
+========================================= */
 
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Rise Animation */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility animate-rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}

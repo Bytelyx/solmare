@@ -156,7 +156,7 @@ export function CategoriesSection() {
           </div>
 
           <div className="mt-14 text-center">
-            <Link to="/jewellery" className="btn-navy">
+            <Link to="/jewellery" className="mt-10 inline-block border border-brand-charcoal bg-transparent px-8 py-3 text-xs font-medium uppercase tracking-widest text-brand-charcoal transition-colors duration-200 hover:bg-gradient-navy hover:text-gold2">
               View all jewellery
             </Link>
           </div>
