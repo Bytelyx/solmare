@@ -57,8 +57,7 @@ export function ProductCard({ product }) {
   };
 
   return (
-    <div className="group relative flex flex-col justify-between w-full p-4 rounded-[22px] bg-gradient-to-b from-product-bg-start via-product-bg-middle to-product-bg-end border border-product-gold-light/40 shadow-product-card transition-all duration-300 hover:shadow-product-card-hover hover:border-product-gold/60 min-h-[320px]" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-
+    <div className="group relative flex flex-col justify-between w-full p-4 rounded-[22px] bg-gradient-to-b from-[#FBF7F2] via-[#F6EEE7] to-[#EEE3D8] border border-[#D8C5B0]/50 shadow-[0_4px_20px_rgba(75,55,35,0.045)] transition-all duration-300 hover:shadow-[0_10px_30px_rgba(75,55,35,0.10)] hover:border-[#C6A15B]/55 min-h-[320px]" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       {/* Top Header */}
       <div className="flex items-start justify-between z-10">
         <div className="flex flex-col items-start pr-1.5 flex-1 min-w-0">
