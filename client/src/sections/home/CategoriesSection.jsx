@@ -39,7 +39,7 @@ export function CategoriesSection() {
             <p className="eyebrow text-xs font-medium uppercase tracking-widest text-gold-metallic md:text-sm">
               Find your piece
             </p>
-            <h1 className="mt-3 font-serif text-4xl text-white md:text-5xl">
+            <h1 className="mt-3 font-serif text-4xl text-cat-gradient-6 md:text-5xl">
               Shop by Category
             </h1>
           </div>
@@ -139,8 +139,8 @@ export function CategoriesSection() {
                   key={t}
                   onClick={() => handleTabChange(t)}
                   className={`shrink-0 cursor-pointer rounded-full border px-5 py-2 text-[11px] font-bold uppercase tracking-[0.2em] transition ${tab === t
-                      ? "border-gold bg-gold text-navy"
-                      : "border-stone-300 bg-white text-stone-700 hover:border-gold hover:text-navy"
+                    ? "border-gold bg-gold text-navy"
+                    : "border-stone-300 bg-white text-stone-700 hover:border-gold hover:text-navy"
                     }`}
                 >
                   {t}

@@ -48,7 +48,6 @@ export const TIMELINE = [
 ];
 
 export const BOUTIQUE_INFO = {
-  address: "Linking Road, Bandra West, Mumbai 400050",
   phone: "+91 98765 43210",
   email: "care@solmare.in",
   hours: "Mon – Sun · 11am to 9pm",

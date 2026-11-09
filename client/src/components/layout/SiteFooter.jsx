@@ -90,10 +90,6 @@ export function SiteFooter() {
             <h4 className="eyebrow mb-5">Visit</h4>
             <ul className="space-y-3 text-sm text-navy-foreground/75">
               <li className="flex gap-2">
-                <MapPin className="h-4 w-4 shrink-0 text-gold" />
-                {BOUTIQUE_INFO.address}
-              </li>
-              <li className="flex gap-2">
                 <Phone className="h-4 w-4 text-gold" />
                 {BOUTIQUE_INFO.phone}
               </li>

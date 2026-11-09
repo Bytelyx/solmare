@@ -3,14 +3,12 @@ import { useMemo } from "react";
 import { categories, getCategory, products } from "@/constants/products";
 import {
   SHOP_FOR,
-  METALS,
   OCCASION_OPTS,
   PRICES,
   STYLES,
 } from "@/constants/filters";
 import {
   audienceOf,
-  materialsOf,
   occasionsOf,
   styleOf,
 } from "@/utils/formatters";
@@ -47,13 +45,13 @@ export function JewellerySection() {
   const category = searchParams.get("category") || undefined;
   const q = searchParams.get("q") || undefined;
   const shopFor = searchParams.get("shopFor") || "all";
-  const metal = searchParams.get("metal") || "all";
   const occasion = searchParams.get("occasion") || "all";
   const price = searchParams.get("price") || "all";
   const style = searchParams.get("style") || "all";
 
   const setFilter = (patch) => {
     const next = new URLSearchParams(searchParams);
+
     Object.entries(patch).forEach(([key, val]) => {
       if (!val || val === "all") {
         next.delete(key);
@@ -61,6 +59,7 @@ export function JewellerySection() {
         next.set(key, val);
       }
     });
+
     setSearchParams(next);
   };
 
@@ -69,6 +68,7 @@ export function JewellerySection() {
   const list = useMemo(() => {
     const pr = PRICES.find((x) => x.value === price);
     const term = (q ?? "").toLowerCase();
+
     return products.filter(
       (p) =>
         p.category !== "gift-cards" &&
@@ -76,21 +76,21 @@ export function JewellerySection() {
         (p.name + " " + p.metal).toLowerCase().includes(term) &&
         (shopFor === "all" ||
           audienceOf(p) === shopFor ||
-          (shopFor.startsWith("kid") && audienceOf(p) === "kids-unisex")) &&
-        (metal === "all" || materialsOf(p).includes(metal)) &&
-        (occasion === "all" || occasionsOf(p).includes(occasion)) &&
+          (shopFor.startsWith("kid") &&
+            audienceOf(p) === "kids-unisex")) &&
+        (occasion === "all" ||
+          occasionsOf(p).includes(occasion)) &&
         (style === "all" ||
           styleOf(p) === style ||
           (style === "yellow-white" &&
             ["yellow", "white"].includes(styleOf(p)))) &&
         (!pr || (p.price >= pr.min && p.price < pr.max))
     );
-  }, [category, q, shopFor, metal, occasion, price, style]);
+  }, [category, q, shopFor, occasion, price, style]);
 
   const clear = () => {
     setFilter({
       shopFor: undefined,
-      metal: undefined,
       occasion: undefined,
       price: undefined,
       style: undefined,
@@ -99,11 +99,13 @@ export function JewellerySection() {
 
   const makeCategoryUrl = (catSlug) => {
     const next = new URLSearchParams(searchParams);
+
     if (catSlug) {
       next.set("category", catSlug);
     } else {
       next.delete("category");
     }
+
     const str = next.toString();
     return str ? `/jewellery?${str}` : "/jewellery";
   };
@@ -116,6 +118,7 @@ export function JewellerySection() {
         subtitle="Hallmarked gold. Certified diamonds. Designed to be worn, every day."
         image={everyday}
       />
+
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
         <div className="-mx-4 mb-8 flex gap-2 overflow-x-auto px-4 pb-2 no-scrollbar">
           <Link
@@ -128,6 +131,7 @@ export function JewellerySection() {
           >
             All
           </Link>
+
           {categories.map((c) => (
             <Link
               key={c.slug}
@@ -149,19 +153,17 @@ export function JewellerySection() {
         </div>
 
         <div className="mb-10 border-y py-5">
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
+          {/* Filters */}
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
             <Filter
               label="Shop for"
               value={shopFor}
-              onChange={(v) => setFilter({ shopFor: v === "all" ? undefined : v })}
+              onChange={(v) =>
+                setFilter({ shopFor: v === "all" ? undefined : v })
+              }
               options={SHOP_FOR}
             />
-            <Filter
-              label="Metals"
-              value={metal}
-              onChange={(v) => setFilter({ metal: v === "all" ? undefined : v })}
-              options={METALS}
-            />
+
             <Filter
               label="Occasion"
               value={occasion}
@@ -170,27 +172,35 @@ export function JewellerySection() {
               }
               options={OCCASION_OPTS}
             />
+
             <Filter
               label="Price"
               value={price}
-              onChange={(v) => setFilter({ price: v === "all" ? undefined : v })}
+              onChange={(v) =>
+                setFilter({ price: v === "all" ? undefined : v })
+              }
               options={PRICES}
             />
+
             <Filter
               label="Style"
               value={style}
-              onChange={(v) => setFilter({ style: v === "all" ? undefined : v })}
+              onChange={(v) =>
+                setFilter({ style: v === "all" ? undefined : v })
+              }
               options={STYLES}
             />
           </div>
+
           <div className="mt-4 flex items-center justify-between text-sm text-muted-foreground">
             <p>
               {list.length} {list.length === 1 ? "design" : "designs"}
               {cat ? ` in ${cat.name}` : ""}
             </p>
+
             <button
               onClick={clear}
-              className="text-xs font-bold uppercase tracking-[0.15em] text-gold hover:underline cursor-pointer"
+              className="cursor-pointer text-xs font-bold uppercase tracking-[0.15em] text-gold hover:underline"
             >
               Clear filters
             </button>
@@ -206,10 +216,12 @@ export function JewellerySection() {
         ) : (
           <div className="py-24 text-center">
             <h2 className="text-3xl">New designs arriving soon</h2>
+
             <p className="mt-2 text-sm text-muted-foreground">
               Our karigars are crafting this collection. Explore everything else
               meanwhile.
             </p>
+
             <Link to="/jewellery" className="btn-navy mt-6">
               View all jewellery
             </Link>

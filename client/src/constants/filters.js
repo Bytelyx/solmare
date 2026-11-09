@@ -8,15 +8,6 @@ export const SHOP_FOR = [
   { value: "kid-girls", label: "Kid – Girls" },
 ];
 
-export const METALS = [
-  { value: "all", label: "All" },
-  { value: "gold", label: "Gold" },
-  { value: "silver", label: "Silver" },
-  { value: "platinum", label: "Platinum" },
-  { value: "diamond", label: "Diamond" },
-  { value: "brass", label: "Brass" },
-];
-
 export const OCCASION_OPTS = [
   { value: "all", label: "All" },
   { value: "wedding", label: "Wedding" },
