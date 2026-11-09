@@ -9,7 +9,6 @@
 /* =========================================
    1. THEME CONFIGURATION
 ========================================= */
-
 @theme inline {
   /* Typography */
   --font-display: "Cormorant Garamond", Georgia, serif;
@@ -61,7 +60,6 @@
   /* =========================================
      2. CATEGORY GRADIENT COLORS
   ========================================= */
-
   --color-cat-gradient-1: #071E17;
   --color-cat-gradient-2: #263B2C;
   --color-cat-gradient-3: #69704E;
@@ -79,14 +77,12 @@
   /* =========================================
      3. GOLD ACCENT COLORS
   ========================================= */
-
   --color-gold-metallic: #D4AF37;
   --color-gold2: #C29C2F;
 
   /* =========================================
      4. PRODUCT CARD LUXURY COLORS
   ========================================= */
-
   /* Card Background */
   --color-product-bg-start: #F3EBDD;
   --color-product-bg-middle: #FAF9F6;
@@ -109,7 +105,6 @@
   /* =========================================
      5. PRODUCT CARD SHADOWS
   ========================================= */
-
   --shadow-product-card:
     0 10px 24px -6px rgba(7, 30, 23, 0.10),
     0 4px 10px -4px rgba(7, 30, 23, 0.04);
@@ -126,7 +121,6 @@
   /* =========================================
      6. TESTIMONIALS & CRAFT COLORS
   ========================================= */
-
   --color-warm-cream: #F2ECE6;
   --color-warm-border: #D6CEC4;
   --color-ring-tan: #EBDCCF;
@@ -148,7 +142,6 @@
 /* =========================================
    7. ROOT VARIABLES
 ========================================= */
-
 :root {
   --radius: 1rem;
 
@@ -203,7 +196,6 @@
   /* =========================================
      8. GLOBAL GRADIENTS
   ========================================= */
-
   /* Luxury Gold Gradient */
   --gradient-gold: linear-gradient(
     120deg,
@@ -244,7 +236,6 @@
 /* =========================================
    9. BASE STYLES
 ========================================= */
-
 @layer base {
 
   * {
@@ -261,10 +252,7 @@
     font-family: var(--font-sans);
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 500;
     letter-spacing: -0.01em;
@@ -283,7 +271,6 @@
 /* =========================================
    10. TEXT GRADIENT UTILITIES
 ========================================= */
-
 @utility text-gradient-gold {
   background: var(--gradient-gold);
   -webkit-background-clip: text;
@@ -302,7 +289,6 @@
 /* =========================================
    11. BACKGROUND GRADIENT UTILITIES
 ========================================= */
-
 @utility bg-gradient-gold {
   background: var(--gradient-gold);
 }
@@ -322,7 +308,6 @@
 /* =========================================
    12. SHADOW UTILITIES
 ========================================= */
-
 @utility shadow-soft {
   box-shadow: var(--shadow-soft);
 }
@@ -330,7 +315,6 @@
 /* =========================================
    13. EYEBROW TEXT
 ========================================= */
-
 @utility eyebrow {
   font-size: 0.7rem;
   letter-spacing: 0.3em;
@@ -342,26 +326,20 @@
 /* =========================================
    14. BUTTON UTILITIES
 ========================================= */
-
 @utility btn-gold {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-
   padding: 0.85rem 1.75rem;
-
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 700;
-
   background: var(--gradient-gold);
   color: var(--navy);
-
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-
   &:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-soft);
@@ -373,20 +351,15 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-
   padding: 0.85rem 1.75rem;
-
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 700;
-
   background: var(--navy);
   color: var(--navy-foreground);
-
   transition: background 0.3s;
   cursor: pointer;
-
   &:hover {
     background: color-mix(in oklab, var(--navy) 85%, var(--gold));
   }
@@ -397,19 +370,14 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-
   padding: 0.85rem 1.75rem;
-
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 700;
-
   border: 1px solid currentColor;
-
   transition: background 0.3s, color 0.3s;
   cursor: pointer;
-
   &:hover {
     background: var(--gold);
     color: var(--navy);
@@ -420,7 +388,6 @@
 /* =========================================
    15. SCROLLBAR UTILITIES
 ========================================= */
-
 @utility no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -433,13 +400,11 @@
 /* =========================================
    16. ANIMATIONS
 ========================================= */
-
 /* Marquee */
 @keyframes marquee {
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-50%);
   }
@@ -455,7 +420,6 @@
     opacity: 0;
     transform: translateY(24px);
   }
-
   to {
     opacity: 1;
     transform: none;

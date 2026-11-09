@@ -5,14 +5,7 @@ export function CraftSection() {
   return (
     <section className="bg-cat-gradient-6">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 md:grid-cols-2 md:px-8">
-        <img
-          src={craft}
-          alt="Goldsmith setting a diamond"
-          loading="lazy"
-          width={1200}
-          height={1408}
-          className="aspect-[4/5] w-full object-cover shadow-soft"
-        />
+        <img src={craft} alt="Goldsmith setting a diamond" loading="lazy" width={1200} height={1408} className="aspect-[4/5] w-full object-cover shadow-soft"/>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-caramel">
             The atelier
@@ -22,11 +15,9 @@ export function CraftSection() {
             Every piece passes through{" "}
             <em className="font-serif italic text-gold2">forty hands.</em>
           </h2>
-
+          
           <p className="mt-6 leading-relaxed text-body-dark">
-            From the first sketch to the final polish, our master karigars shape each
-            design by hand — setting every diamond under the loupe, checking every
-            clasp twice.
+            From the first sketch to the final polish, our master karigars shape each design by hand — setting every diamond under the loupe, checking every clasp twice.
           </p>
 
           {/* Stats Section */}
@@ -48,10 +39,7 @@ export function CraftSection() {
           </div>
 
           {/* CTA Button */}
-          <Link
-            to="/about"
-            className="mt-10 inline-block border border-brand-charcoal bg-transparent px-8 py-3 text-xs font-medium uppercase tracking-widest text-brand-charcoal transition-colors duration-200 hover:bg-gradient-navy hover:text-gold2"
-          >
+          <Link to="/about" className="mt-10 inline-block border border-brand-charcoal bg-transparent px-8 py-3 text-xs font-medium uppercase tracking-widest text-brand-charcoal transition-colors duration-200 hover:bg-gradient-navy hover:text-gold2">
             Our story
           </Link>
         </div>
