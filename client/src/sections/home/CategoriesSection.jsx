@@ -125,10 +125,10 @@ export function CategoriesSection() {
               <p className="eyebrow text-xs font-medium uppercase tracking-widest text-[#B38728]">
                 Iconic designs
               </p>
-              <h2 className="mt-3 font-serif text-4xl text-stone-900 md:text-5xl">
+              <h2 className="mt-3 font-serif text-4xl text-gradient-navy md:text-5xl">
                 Curated Fine Jewellery
               </h2>
-              <p className="mt-3 text-sm text-stone-600">
+              <p className="mt-3 text-sm text-gold2">
                 Everyday brilliance sculpted in 18Kt &amp; 22Kt hallmarked gold.
               </p>
             </div>

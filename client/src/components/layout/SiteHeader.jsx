@@ -1,7 +1,7 @@
+
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useRef, useState } from "react";
 import {
-  Camera,
   Heart,
   Menu,
   Mic,
@@ -18,7 +18,6 @@ import { MobileMenu } from "./MobileMenu";
 function SearchBar({ onDone }) {
   const navigate = useNavigate();
   const [q, setQ] = useState("");
-  const fileRef = useRef(null);
 
   const go = (value) => {
     const trimmed = (value || "").trim();
@@ -53,32 +52,6 @@ function SearchBar({ onDone }) {
         placeholder="Search rings, earrings, diamonds…"
         className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
       />
-
-      <input
-        ref={fileRef}
-        type="file"
-        accept="image/*"
-        className="hidden"
-        onChange={(e) => {
-          if (e.target.files?.[0]) {
-            toast.success("Photo received — showing similar designs");
-            go("");
-          }
-
-          e.target.value = "";
-        }}
-      />
-
-      <button
-        type="button"
-        aria-label="Search by photo"
-        onClick={() => fileRef.current?.click()}
-        className="cursor-pointer text-foreground/70 hover:text-gold"
-      >
-        <Camera className="h-4 w-4" />
-      </button>
-
-      <span className="h-5 w-px bg-border" />
 
       <button
         type="button"
